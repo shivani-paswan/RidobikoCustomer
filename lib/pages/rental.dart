@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:ridobiko/Tile.dart';
 class Rental extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -24,6 +25,7 @@ class  myHome extends State{
       Column(
         children: <Widget>[
           Expanded(child:
+
           Container(
               color: Color.fromRGBO(192, 192, 192, 1),
               child:
@@ -193,15 +195,99 @@ class  myHome extends State{
           ),
 
 
-          Expanded(child:
-          Container(
+          Expanded(
+            child:
+                Container(
+                  padding: EdgeInsets.only(left: 10,top: 10),
             decoration: const BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.only(topRight: Radius.circular(25.0),
                     topLeft: Radius.circular(25.0))
             ),
+             child:
+             Container(
+               padding:EdgeInsets.all(10),
+             child:
+                 Column(
 
-          ),),
+                 children: <Widget>[
+                   Align(alignment: Alignment.centerLeft,child: Text('Featured',
+                     style: TextStyle(
+                       color: Colors.grey[800],
+                       fontWeight: FontWeight.bold,
+                       fontSize: 30,
+                     ),
+                   ),
+                   ),
+
+                   SingleChildScrollView(
+                     scrollDirection: Axis.horizontal,
+                     child:
+                     Row(
+                       children:
+                   <Widget> [
+
+                     ActivityListTile(
+                       title: 'running',
+                       nextLine: 'BUild strong my bones\n let do funable running',
+                       subtitle: '337/- only',
+                       bikeImage: Icon(Icons.landscape),
+                       trailingImage:Icon(Icons.arrow_forward),
+                       color: Color.fromRGBO(108, 115, 255, 1),
+                       gradient: Color.fromRGBO(58, 63, 255, 1),
+                       onTab: (){
+
+                       },
+
+                     ),
+
+                     ActivityListTile(
+                       title: 'running',
+                       bikeImage: Icon(Icons.landscape),
+                       nextLine: 'BUild strong my bones',
+                       subtitle: '337/- only',
+                       trailingImage:Icon(Icons.arrow_forward),
+                       color: Color.fromRGBO(108, 115, 255, 1),
+                       gradient: Color.fromRGBO(58, 63, 255, 1),
+                       onTab: (){
+
+                       },
+                     ),
+                     ActivityListTile(
+                       title: 'running',
+                       bikeImage: Icon(Icons.landscape),
+                       nextLine: 'BUild strong my bones',
+                       subtitle: '337/- only',
+                       trailingImage:Icon(Icons.arrow_forward),
+                       color: Color.fromRGBO(108, 115, 255, 1),
+                       gradient: Color.fromRGBO(58, 63, 255, 1),
+                       onTab: (){
+
+                       },
+                     ),
+                     ActivityListTile(
+                       title: 'running',
+                       nextLine: 'BUild strong my bones',
+                       subtitle: '337/- only',
+                       bikeImage: Icon(Icons.landscape),
+                       trailingImage:Icon(Icons.arrow_forward),
+                       color: Color.fromRGBO(108, 115, 255, 1),
+                       gradient: Color.fromRGBO(58, 63, 255, 1),
+                       onTab: (){
+
+                       },
+                     ),
+
+                       ],
+                     ),
+                   ),
+                 ],
+                 )
+
+             ),
+          ),
+
+          )
 
 
         ],
