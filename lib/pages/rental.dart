@@ -1,19 +1,31 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-class Rental extends StatelessWidget {
+class Rental extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+   return myHome();
+  }
+
+
+
+}
+
+class  myHome extends State{
+  Color rentalBackgroundColor=Colors.white;
+  Color subsBackgroundColor=Colors.redAccent;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      body:
+      backgroundColor: Color.fromRGBO(192, 192, 192, 1),
 
+      body:
       Column(
         children: <Widget>[
           Expanded(child:
           Container(
-              color: Colors.red,
+              color: Color.fromRGBO(192, 192, 192, 1),
               child:
               Column(
                 children: <Widget>[
@@ -31,31 +43,47 @@ class Rental extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-
-
-
-
                       children: <Widget>[
                         Expanded(child:
                         InkWell(
-                          child: Container(
+                          child: GestureDetector(
+                            onTap: (){
+                              setState((){
+                                rentalBackgroundColor=Colors.white;
+                                subsBackgroundColor=Colors.redAccent;
+                              });
+                            },
+                            child: Container(
 
-                              margin: EdgeInsets.only(right: 5.0),
-                              height: 90.0,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text("Rentals",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20.0),
+                                margin: EdgeInsets.only(right: 5.0),
+                                height: 90.0,
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text("Rentals",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.w600
+                                        ),
+                                      ),
+                                      Text("For hours & days",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15.0),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15.0),
-                                ),
-                              )
+                                decoration: BoxDecoration(
+                                  color: rentalBackgroundColor,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15.0),
+                                  ),
+                                )
+                            ),
                           ),
 
                           onTap: () {
@@ -69,24 +97,42 @@ class Rental extends StatelessWidget {
 
 
                         Expanded(child:
-                        Container(
-                            margin: EdgeInsets.only(left: 5.0),
-                            height: 90.0,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text("Subscription",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.0),
+                        GestureDetector(
+                          onTap: (){
+                            setState((){
+                              subsBackgroundColor=Colors.white;
+                              rentalBackgroundColor=Colors.redAccent;
+                            });
+                          },
+                          child: Container(
+                              margin: EdgeInsets.only(left: 5.0),
+                              height: 90.0,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Subscription",
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    Text("For months & years",
+                                      style: TextStyle(
+                                          fontSize: 15.0),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            decoration: BoxDecoration(
-                              // color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15.0),
-                              ),
-                            )
+                              decoration: BoxDecoration(
+                                color: subsBackgroundColor,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15.0),
+                                ),
+                              )
 
+                          ),
                         )
                         )
                       ],
@@ -104,14 +150,11 @@ class Rental extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Expanded(child: Text("Ridobiko",
-                          style: TextStyle(color: Colors.white,
-                              fontSize: 50.0),
-                        ),),
+                       Image.asset("assets/images/logo.png",height:60,),
 
                         Text("C  U  S  T  O  M  E  R",
-                          style: TextStyle(color: Colors.white,
-                              fontSize: 20.0),
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 15.0),
                         ),
                       ],
                     ),
@@ -125,15 +168,21 @@ class Rental extends StatelessWidget {
                       margin: EdgeInsets.only(
                           top: 20.0, right: 20.0, left: 20.0),
                       decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.redAccent,
                           borderRadius: BorderRadius.all(Radius.circular(50.0))
                       ),
-                      child:
-                      Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                        ],
-                      )
+                  children: [
+                  Icon(Icons.location_on,color: Colors.white, size: 40,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text("Select city to search",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white),),
+                    ),
+                    Icon(Icons.arrow_right_alt_sharp,color: Colors.white, size: 40,),
+
+                ],
+              ),
                   ),
 
                 ],
@@ -147,19 +196,17 @@ class Rental extends StatelessWidget {
           Expanded(child:
           Container(
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Colors.red,
                 borderRadius: BorderRadius.only(topRight: Radius.circular(25.0),
                     topLeft: Radius.circular(25.0))
             ),
+
           ),),
 
 
         ],
       ),
-
-
     );
   }
-
 
 }
