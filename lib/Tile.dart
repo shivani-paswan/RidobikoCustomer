@@ -22,60 +22,64 @@ class ActivityListTile extends StatelessWidget{
           child:
               GestureDetector(
                 onTap: onTab,
-                child: Stack(
-                  alignment: Alignment.bottomRight,
-                  children: <Widget>[
-                    Card(
-                      child: Container(
-                        decoration: const BoxDecoration(
+                child: Container(
+                  child: Stack(
+                    alignment: Alignment.bottomRight,
+                    children: <Widget>[
+                      Card(
+                        shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        elevation: 10,
                         color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(50.0))
-                ),
-                        height: 140,
-                        width: 250,
-                        child: ListTile(
 
-                          title:
-                          Padding(padding:const EdgeInsets.only(top:8),
-                            child: Text(title,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20
-                            )),
-                          ),
+                        child: Container(
+                          height: 140,
+                          width: 250,
+                          child: ListTile(
 
-                          subtitle:
-                          Padding(padding:const EdgeInsets.only(top:8),
-                            child: Text(subtitle,
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold
-                            ),),
+                            title:
+                            Padding(padding:const EdgeInsets.only(top:8),
+                              child: Text(title,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20
+                              )),
+                            ),
+
+                            subtitle:
+                            Padding(padding:const EdgeInsets.only(top:8),
+                              child: Text(subtitle,
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold
+                              ),),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                       Container(
-                       padding: EdgeInsets.only(bottom: 50,right: 100),
-                           child: Text(nextLine,
-                           style: TextStyle(
-                             color: Colors.redAccent
-                           ),),
-                       ),
-                    Padding(padding: const EdgeInsets.only(bottom: 10),
-                      child:
-                      Container(
-                        padding: EdgeInsets.only(right: 15),
-                          child: trailingImage),
-                    ),
-                    Padding(padding: const EdgeInsets.only(bottom: 10),
-                      child:
-                      Container(
-                          padding: EdgeInsets.only(right: 20,bottom: 100),
-                          child: bikeImage),
-                    )
-                  ],
+                         Container(
+                         padding: EdgeInsets.only(bottom: 50,right: 100),
+                             child: Text(nextLine,
+                             style: TextStyle(
+                               color: Colors.redAccent
+                             ),),
+                         ),
+                      Padding(padding: const EdgeInsets.only(bottom: 10),
+                        child:
+                        Container(
+                          padding: EdgeInsets.only(right: 15),
+                            child: trailingImage),
+                      ),
+                      Padding(padding: const EdgeInsets.only(bottom: 10),
+                        child:
+                        Container(
+                            padding: EdgeInsets.only(right: 20,bottom: 100),
+                            child: bikeImage),
+                      )
+                    ],
+                  ),
                 ),
               )
 
