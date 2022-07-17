@@ -1,14 +1,14 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:ridobiko/Tile.dart';
+import 'package:ridobiko/rentalLayout/HappyCustomer.dart';
+import 'package:ridobiko/rentalLayout/Spinner.dart';
+import 'package:ridobiko/rentalLayout/Tile.dart';
+import 'package:ridobiko/rentalLayout/WhyRidobiko.dart';
 class Rental extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
    return myHome();
   }
-
-
 
 }
 
@@ -195,7 +195,7 @@ class  myHome extends State{
 
             Container(
               margin: EdgeInsets.only(top: 30),
-              padding: EdgeInsets.only(left: 10,top: 10),
+              padding: EdgeInsets.only(top: 10),
               decoration: const BoxDecoration(
             color: Colors.red,
             borderRadius: BorderRadius.only(topRight: Radius.circular(25.0),
@@ -203,8 +203,9 @@ class  myHome extends State{
               ),
                child:
                Container(
-                 color: Colors.transparent,
-                 padding:EdgeInsets.all(10),
+                 margin: EdgeInsets.only(right: 3),
+                 padding:EdgeInsets.only(left: 20,top:10,bottom: 10),
+               color: Colors.transparent,
                child:
              Column(
 
@@ -226,13 +227,13 @@ class  myHome extends State{
                <Widget> [
 
                  ActivityListTile(
-                   title: 'running',
-                   nextLine: 'BUild strong my bones\n let do funable running',
-                   subtitle: '337/- only',
+                   title: 'Rental booking',
+                   nextLine: 'On all booking above \n10,000/- Rs',
+                   subtitle: 'Flat 500 Rs. off',
                    bikeImage: Icon(Icons.landscape),
                    trailingImage:Icon(Icons.arrow_forward),
-                   color: Color.fromRGBO(108, 115, 255, 1),
-                   gradient: Color.fromRGBO(58, 63, 255, 1),
+                   color: Colors.white,
+                   gradient: Colors.white,
                    onTab: (){
 
                    },
@@ -240,37 +241,37 @@ class  myHome extends State{
                  ),
 
                  ActivityListTile(
-                   title: 'running',
+                   title: 'rental package',
                    bikeImage: Icon(Icons.landscape),
-                   nextLine: 'BUild strong my bones',
-                   subtitle: '337/- only',
+                   nextLine: 'on all booking of 5 days\n & more',
+                   subtitle: '10% flat off',
                    trailingImage:Icon(Icons.arrow_forward),
-                   color: Color.fromRGBO(108, 115, 255, 1),
-                   gradient: Color.fromRGBO(58, 63, 255, 1),
+                   color: Colors.white,
+                   gradient: Colors.white,
                    onTab: (){
 
                    },
                  ),
                  ActivityListTile(
-                   title: 'running',
+                   title: 'rental package',
                    bikeImage: Icon(Icons.landscape),
-                   nextLine: 'BUild strong my bones',
-                   subtitle: '337/- only',
+                   nextLine: 'on all booking of 10 days',
+                   subtitle: '15% flat off',
                    trailingImage:Icon(Icons.arrow_forward),
-                   color: Color.fromRGBO(108, 115, 255, 1),
-                   gradient: Color.fromRGBO(58, 63, 255, 1),
+                   color: Colors.white,
+                   gradient: Colors.white,
                    onTab: (){
 
                    },
                  ),
                  ActivityListTile(
-                   title: 'running',
-                   nextLine: 'BUild strong my bones',
-                   subtitle: '337/- only',
+                   title: '15 days rental\n package',
+                   nextLine: 'on all booking or 15 days',
+                   subtitle: '20% flat off',
                    bikeImage: Icon(Icons.landscape),
                    trailingImage:Icon(Icons.arrow_forward),
-                   color: Color.fromRGBO(108, 115, 255, 1),
-                   gradient: Color.fromRGBO(58, 63, 255, 1),
+                   color: Colors.white,
+                   gradient: Colors.white,
                    onTab: (){
 
                    },
@@ -278,16 +279,214 @@ class  myHome extends State{
 
                    ],
                  ),
+
+
                ),
     /// add widgets from here
+              Container(
+                child:
+                Align(alignment: Alignment.centerLeft,child: Text('Why Ridobiko',
+                  style: TextStyle(
+                    color: Colors.grey[800],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
+                ),
+                ),
+              ),
 
 
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child:
+              Row(
+              children: <Widget>[
+                whyRido(
+                  title: 'Home delivery & return',
+                  subtitle: 'On time doorstep serive,at you\n preferred location and time',
+                  trailingImage: Icon(Icons.home),
+                  color: Colors.white,
+                  onTab: (){
+
+                  },
+                ),
+                whyRido(
+                  title: 'Flexible pricing plans',
+                  subtitle: 'On time doorstep serive,at you\n preferred location and time',
+                  trailingImage: Icon(Icons.home),
+                  color: Colors.white,
+                  onTab: (){
+
+                  },
+                ),
+                whyRido(
+                  title: 'Well maintained bikes',
+                  subtitle: 'On time doorstep serive,at you\n preferred location and time',
+                  trailingImage: Icon(Icons.home),
+                  color: Colors.white,
+                  onTab: (){
+
+                  },
+                ),
+                whyRido(
+                  title: '24X7 support',
+                  subtitle: 'On time doorstep serive,at you\n preferred location and time',
+                  trailingImage: Icon(Icons.home),
+                  color: Colors.white,
+                  onTab: (){
+
+                  },
+                ),
+
+              ],
+              ),
+            ),
+
+               Container(
+                 margin: EdgeInsets.only(bottom: 10),
+                 child:
+                 Row(
+                   children: <Widget>[
+                   Text("FAQs",textAlign: TextAlign.left,
+                   style: TextStyle(
+                     fontSize: 30,
+                     color: Colors.grey[800],
+                     fontWeight: FontWeight.bold),
+                   ),
+                     Padding(padding: EdgeInsets.only(left: 235)),
+                     Container(
+                       child:
+                       Text('View all',
+                         textAlign: TextAlign.right,
+                         style: TextStyle(
+                             fontSize: 14,
+                             color: Colors.white
+                         ),
+                       ) ,
+                     )
+
+                   ],
+                 ),
+               ),
+
+            Spinner(text: 'spinner'),
+
+               Container(
+                 margin: EdgeInsets.only(bottom: 10,top: 10),
+                 child:
+                 Align(alignment: Alignment.centerLeft,child: Text('Happy Customers',
+                   style: TextStyle(
+                     color: Colors.grey[800],
+                     fontWeight: FontWeight.bold,
+                     fontSize: 30,
+                   ),
+                 ),
+                 ),
+               ),
+
+                   SingleChildScrollView(
+                     scrollDirection: Axis.horizontal,
+                     child:
+                     Row(
+                       children: <Widget>[
+                        HappyCust(
+                          title: 'Rajat Verma',
+                          subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                          color: Colors.white,
+                          onTab: (){
+
+                          },
+                        ),
+
+                         HappyCust(
+                           title: 'Abhinandan Singh',
+                           subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                           color: Colors.white,
+                           onTab: (){
+
+                           },
+                         ),
+                         HappyCust(
+                           title: 'Shantum Sharma',
+                           subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                           color: Colors.white,
+                           onTab: (){
+
+                           },
+                         ),
+
+                         HappyCust(
+                           title: 'Shivani Paswan',
+                           subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                           color: Colors.white,
+                           onTab: (){
+
+                           },
+                         ),
+
+                         HappyCust(
+                           title: 'Pooja kr',
+                           subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                           color: Colors.white,
+                           onTab: (){
+
+                           },
+                         ),
+                         HappyCust(
+                           title: 'Shubham Raj Tripathi',
+                           subtitle: 'Nice service with on time pickup and delivery.Good customer support with friendly and very smooth and the package are pocket friendly overall an amazing experience. Would highly recommend',
+                           color: Colors.white,
+                           onTab: (){
+
+                           },
+                         ),
+
+                       ],
+
+                     )
+
+                   ),
              ],
 
              )
 
                ),
-            )
+            ),
+         Container(
+           padding: EdgeInsets.only(top: 55,bottom: 55),
+         color: Colors.white,
+           height: 200,
+           child: Row(
+             children: <Widget>[
+               Container(
+                 child: Icon(Icons.landscape),
+
+                 margin: EdgeInsets.only(left: 30,right: 30),
+               ),
+               Container(
+                 alignment: Alignment.centerLeft,
+                 child: Column(
+                   children: <Widget>[
+                     Text('Highest rated',
+                     style: TextStyle(
+                         fontWeight: FontWeight.bold,
+                       fontSize: 30
+                     ),
+                     ),
+                     Padding(padding: EdgeInsets.only(bottom: 10)),
+                     Text('self- drive bike rental and \nsubscription service in india',
+                       style: TextStyle(
+                         color: Colors.grey,
+                         fontSize: 15
+                       ),
+                     )
+                   ],
+                 ),
+               )
+             ],
+           ),
+         )
+
 
 
           ],

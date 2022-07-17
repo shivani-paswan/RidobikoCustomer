@@ -12,7 +12,8 @@ class ActivityListTile extends StatelessWidget{
   Color color;
   Color gradient;
 
-  ActivityListTile({ required this.title,required this.bikeImage,required this.nextLine,required this.subtitle,required this.trailingImage,required this.onTab,required this.color,required this.gradient});
+  ActivityListTile(
+      { required this.title,required this.bikeImage,required this.nextLine,required this.subtitle,required this.trailingImage,required this.onTab,required this.color,required this.gradient});
   @override
   Widget build(BuildContext context) {
     return
@@ -22,7 +23,8 @@ class ActivityListTile extends StatelessWidget{
           child:
               GestureDetector(
                 onTap: onTab,
-                child: Container(
+                child:
+                Container(
                   child: Stack(
                     alignment: Alignment.bottomRight,
                     children: <Widget>[
@@ -48,7 +50,7 @@ class ActivityListTile extends StatelessWidget{
                             ),
 
                             subtitle:
-                            Padding(padding:const EdgeInsets.only(top:8),
+                            Padding(padding:const EdgeInsets.only(top:8,bottom: 8,),
                               child: Text(subtitle,
                               style: TextStyle(
                                 color: Colors.red,
@@ -60,7 +62,7 @@ class ActivityListTile extends StatelessWidget{
                         ),
                       ),
                          Container(
-                         padding: EdgeInsets.only(bottom: 50,right: 100),
+                         padding: EdgeInsets.only(bottom:45,right: 80),
                              child: Text(nextLine,
                              style: TextStyle(
                                color: Colors.redAccent
