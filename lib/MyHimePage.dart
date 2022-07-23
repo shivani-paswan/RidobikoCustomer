@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/rental.dart';
-import 'pages/payment.dart';
+import 'pages/subscriptions.dart';
 import 'pages/booking.dart';
 import 'pages/more.dart';
 
@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget{
 
 class _MyHomePageState extends State<MyHomePage>{
   int selectedPage=0;
-  final _pageOptions=[Rental(),Payment(),Booking(),More()];
+  final _pageOptions=[Rental(),Subscriptions(),Booking(),More()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage>{
 
               BottomNavigationBarItem(
                   icon: Icon(Icons.payment),
-                  label: 'Payment'
+                  label: 'Subscriptions'
               ),
 
               BottomNavigationBarItem(

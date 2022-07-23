@@ -4,6 +4,7 @@ import 'package:ridobiko/rentalLayout/HappyCustomer.dart';
 import 'package:ridobiko/rentalLayout/Spinner.dart';
 import 'package:ridobiko/rentalLayout/Tile.dart';
 import 'package:ridobiko/rentalLayout/WhyRidobiko.dart';
+import 'package:ridobiko/pages/SearchScreen.dart';
 class Rental extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -19,14 +20,14 @@ class  myHome extends State{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(192, 192, 192, 1),
+      backgroundColor: Color.fromRGBO(244, 67, 54, 1),
 
       body:
       SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
-                color: Color.fromRGBO(192, 192, 192, 1),
+                color: Color.fromRGBO(244, 67, 54, 1),
                 child:
                 Column(
                   children: <Widget>[
@@ -87,9 +88,6 @@ class  myHome extends State{
                               ),
                             ),
 
-                            onTap: () {
-
-                            },
 
 
                           ),
@@ -134,13 +132,14 @@ class  myHome extends State{
                                 )
 
                             ),
-                          )
+                          ),
+
+
                           )
                         ],
                       ),
 
                     ),
-
 
                     SizedBox(height: 10.0),
 
@@ -151,9 +150,9 @@ class  myHome extends State{
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                         Image.asset("assets/images/logo.png",height:60,),
+                         Image.asset("assets/images/logo.png",height:60,color: Colors.white,),
 
-                          Text("C  U  S  T  O  M  E  R",
+                          Text("C  U  S  T  O  M  E R ",
                             style: TextStyle(color: Colors.black,
                                 fontSize: 15.0),
                           ),
@@ -164,26 +163,34 @@ class  myHome extends State{
                     SizedBox(height: 10.0),
 
 
-                    Container(
-                        height: 70.0,
-                        margin: EdgeInsets.only(
-                            top: 20.0, right: 20.0, left: 20.0),
-                        decoration: const BoxDecoration(
-                            color: Colors.redAccent,
-                            borderRadius: BorderRadius.all(Radius.circular(50.0))
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                    Icon(Icons.location_on,color: Colors.white, size: 40,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text("Select city to search",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white),),
-                      ),
-                      Icon(Icons.arrow_right_alt_sharp,color: Colors.white, size: 40,),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  SearchScreen()),
+                        );
+                      },
+                      child: Container(
 
+                          height: 70.0,
+                          margin: EdgeInsets.only(
+                              top: 20.0, right: 20.0, left: 20.0),
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(50.0))
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                      Icon(Icons.location_on,color: Colors.red, size: 40,),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text("Select city to search",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.grey),),
+                        ),
+                        Icon(Icons.arrow_right_alt_sharp,color: Colors.red, size: 40,),
                   ],
                 ),
+                      ),
                     ),
 
                   ],
@@ -197,7 +204,8 @@ class  myHome extends State{
               margin: EdgeInsets.only(top: 30),
               padding: EdgeInsets.only(top: 10),
               decoration: const BoxDecoration(
-            color: Colors.red,
+                color: Color.fromRGBO(246,244,241,1),
+
             borderRadius: BorderRadius.only(topRight: Radius.circular(25.0),
                 topLeft: Radius.circular(25.0))
               ),
@@ -212,7 +220,7 @@ class  myHome extends State{
              children: <Widget>[
                Align(alignment: Alignment.centerLeft,child: Text('Featured',
                  style: TextStyle(
-                   color: Colors.grey[800],
+                   color: Colors.grey,
                    fontWeight: FontWeight.bold,
                    fontSize: 30,
                  ),
@@ -287,7 +295,7 @@ class  myHome extends State{
                 child:
                 Align(alignment: Alignment.centerLeft,child: Text('Why Ridobiko',
                   style: TextStyle(
-                    color: Colors.grey[800],
+                    color: Colors.grey,
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                   ),
@@ -350,7 +358,7 @@ class  myHome extends State{
                    Text("FAQs",textAlign: TextAlign.left,
                    style: TextStyle(
                      fontSize: 30,
-                     color: Colors.grey[800],
+                     color: Colors.grey,
                      fontWeight: FontWeight.bold),
                    ),
                      Padding(padding: EdgeInsets.only(left: 235)),
@@ -360,7 +368,7 @@ class  myHome extends State{
                          textAlign: TextAlign.right,
                          style: TextStyle(
                              fontSize: 14,
-                             color: Colors.white
+                             color: Colors.red
                          ),
                        ) ,
                      )
@@ -372,17 +380,18 @@ class  myHome extends State{
             Spinner(text: 'spinner'),
 
                Container(
-                 margin: EdgeInsets.only(bottom: 10,top: 10),
+                 margin: EdgeInsets.only(top: 30),
                  child:
                  Align(alignment: Alignment.centerLeft,child: Text('Happy Customers',
                    style: TextStyle(
-                     color: Colors.grey[800],
+                     color: Colors.grey,
                      fontWeight: FontWeight.bold,
                      fontSize: 30,
                    ),
                  ),
                  ),
                ),
+
 
                    SingleChildScrollView(
                      scrollDirection: Axis.horizontal,
