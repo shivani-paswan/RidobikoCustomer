@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:ridobiko/pages/search.dart';
 import 'package:ridobiko/rentalLayout/HappyCustomer.dart';
 import 'package:ridobiko/rentalLayout/Spinner.dart';
 import 'package:ridobiko/rentalLayout/Tile.dart';
@@ -23,7 +24,7 @@ class  myHome extends State{
     return Scaffold(
       body:
       Container(
-        decoration: BoxDecoration(gradient: LinearGradient(begin:Alignment.topRight,end: Alignment.centerLeft,colors: [Colors.red,Colors.purple] )),
+        decoration: BoxDecoration(gradient: LinearGradient(begin:Alignment.topLeft,end: Alignment.bottomRight,colors: [Colors.red[900]!,Colors.red[300]!] )),
 
         child: SingleChildScrollView(
           child: Column(
@@ -33,117 +34,112 @@ class  myHome extends State{
                       height: 400,
                   child:
                   Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+                      Card(
+                        elevation: 10,
+                        child: Container(
+                          margin: EdgeInsets.only(top: 60.0, right: 30.0, left: 30.0),
+                          height: 100,
+                          decoration:  BoxDecoration(
+                              color: Color.fromRGBO(246,244,241,1),
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              InkWell(
+                                child: GestureDetector(
+                                  onTap: (){
+                                    setState((){
+                                      rentalBackgroundColor=Colors.white;
+                                      subsBackgroundColor=Color.fromRGBO(0, 0, 0,0);
 
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        margin: EdgeInsets.only(top: 60.0, right: 30.0, left: 30.0),
-                        height: 100,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(255,99,71,0.3),
+                                    });
+                                  },
+                                  child: Container(
 
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(child:
-                            InkWell(
-                              child: GestureDetector(
+                                      margin: EdgeInsets.only(right: 5.0),
+                                      height: 90.0,
+                                      child: Align(
+                                        alignment: Alignment.center,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Text("Rentals",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20.0,
+                                                  fontWeight: FontWeight.w600
+                                              ),
+                                            ),
+                                            Text("For hours & days",
+                                              style: TextStyle(
+                                                  // color: Colors.black,
+                                                  fontSize: 15.0),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: rentalBackgroundColor,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(15.0),
+                                        ),
+                                      )
+                                  ),
+                                ),
+
+
+
+                              ),
+
+
+                              GestureDetector(
                                 onTap: (){
                                   setState((){
-                                    rentalBackgroundColor=Colors.white;
-                                    subsBackgroundColor=Color.fromRGBO(0, 0, 0,0);
+                                    subsBackgroundColor=Colors.white;
+                                    rentalBackgroundColor=Color.fromRGBO(0, 0, 0,0);
 
                                   });
                                 },
                                 child: Container(
-
-                                    margin: EdgeInsets.only(right: 5.0),
+                                    margin: EdgeInsets.only(left: 5.0),
                                     height: 90.0,
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Text("Rentals",
+                                          Text("Subscription",
                                             style: TextStyle(
-                                                color: Colors.black,
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.w600
                                             ),
                                           ),
-                                          Text("For hours & days",
+                                          Text("For months & years",
                                             style: TextStyle(
-                                                // color: Colors.black,
                                                 fontSize: 15.0),
                                           ),
                                         ],
                                       ),
                                     ),
                                     decoration: BoxDecoration(
-                                      color: rentalBackgroundColor,
+                                      color: subsBackgroundColor,
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(15.0),
                                       ),
                                     )
+
                                 ),
-                              ),
+                              )
+                            ],
+                          ),
 
-
-
-                            ),
-
-                            ),
-
-
-                            Expanded(child:
-                            GestureDetector(
-                              onTap: (){
-                                setState((){
-                                  subsBackgroundColor=Colors.white;
-                                  rentalBackgroundColor=Color.fromRGBO(0, 0, 0,0);
-
-                                });
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.only(left: 5.0),
-                                  height: 90.0,
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text("Subscription",
-                                          style: TextStyle(
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.w600
-                                          ),
-                                        ),
-                                        Text("For months & years",
-                                          style: TextStyle(
-                                              fontSize: 15.0),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: subsBackgroundColor,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(15.0),
-                                    ),
-                                  )
-
-                              ),
-                            ),
-
-
-                            )
-                          ],
                         ),
-
                       ),
 
                       SizedBox(height: 10.0),
@@ -172,7 +168,7 @@ class  myHome extends State{
                         onTap: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>  SearchScreen()),
+                            MaterialPageRoute(builder: (context) =>  Search()),
                           );
                         },
                         child: Container(
