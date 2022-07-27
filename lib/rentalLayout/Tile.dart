@@ -6,14 +6,15 @@ class ActivityListTile extends StatelessWidget{
   String title;
   String nextLine;
   String subtitle;
-  Widget trailingImage;
-  Widget bikeImage;
+  String discount;
+  Widget backArrow;
+  Widget icons;
   VoidCallback onTab;
   Color color;
   Color gradient;
 
   ActivityListTile(
-      { required this.title,required this.bikeImage,required this.nextLine,required this.subtitle,required this.trailingImage,required this.onTab,required this.color,required this.gradient});
+      { required this.title,required this.icons,required this.discount,required this.nextLine,required this.subtitle,required this.backArrow,required this.onTab,required this.color,required this.gradient});
   @override
   Widget build(BuildContext context) {
     return
@@ -37,54 +38,29 @@ class ActivityListTile extends StatelessWidget{
 
                         child: Container(
                           height: 140,
-                          width: 250,
-                          child: ListTile(
-
-                            title:
-                            Padding(padding:const EdgeInsets.only(top:8),
-                              child: Text(title,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20
-                              )),
+                          width: 270,
+                          child: Column(
+                            children:[ Row(
+                              children: [
+                                Container(width: 70,height: 30,margin:EdgeInsets.only(top: 10,left: 20),decoration: BoxDecoration(color: color,borderRadius: BorderRadius.all(Radius.circular(8))),
+                                  child: Center(child: Text(discount,style: TextStyle(color: Colors.white),),),),
+                                Padding(padding:EdgeInsets.only(left: 5,top: 10),child: Text(nextLine))
+                              ],
                             ),
+                              ListTile(
+                                leading: icons,
+                                title: Text(title,style: TextStyle(color: Colors.red,fontSize: 20,fontWeight: FontWeight.bold),),
+                                subtitle: Text(subtitle,style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 11),),
+                              ),
+                              Padding(padding: EdgeInsets.only(left: 200),child: backArrow,)
+                          ]),
 
-                            subtitle:
-                            Padding(padding:const EdgeInsets.only(top:8,bottom: 8,),
-                              child: Text(subtitle,
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold
-                              ),),
-                            ),
-                          ),
-                        ),
-                      ),
-                         Container(
-                         padding: EdgeInsets.only(bottom:45,right: 80),
-                             child: Text(nextLine,
-                             style: TextStyle(
-                               color: Colors.redAccent
-                             ),),
-                         ),
-                      Padding(padding: const EdgeInsets.only(bottom: 10),
-                        child:
-                        Container(
-                          padding: EdgeInsets.only(right: 15),
-                            child: trailingImage),
-                      ),
-                      Padding(padding: const EdgeInsets.only(bottom: 10),
-                        child:
-                        Container(
-                            padding: EdgeInsets.only(right: 20,bottom: 100),
-                            child: bikeImage),
-                      )
-                    ],
-                  ),
-                ),
               )
+  ),
 
+   ] )
+    )
+              )
         );
   }
 
